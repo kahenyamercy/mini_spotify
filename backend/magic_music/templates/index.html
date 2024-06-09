@@ -17,11 +17,11 @@
         <!-- Welcome User -->
         <div class="sidebar-section">
             <span style="margin-left: 14px;" class="sidebar-link-icon">👤</span>
-            <b>Welcome, user</b>
+            <b>Welcome, {{user.username}}</b>
             <br>
             <br>
 
-            <a href="#">
+            <a href="/logout">
                 <span class="sidebar-link-icon">↪️</span>
                 <b>Logout</b>
             </a>
@@ -29,47 +29,30 @@
 
         <!-- Top section of the sidebar -->
         <div class="sidebar-section">
-            <a href="#" class="sidebar-link active">
+            <a href="/" class="sidebar-link active">
                 <span class="sidebar-link-icon">🏠</span>
                 Home
             </a>
-            <a href="#" class="sidebar-link">
+            <a href="/search" class="sidebar-link">
                 <span class="sidebar-link-icon">🔍</span>
                 Search
             </a>
-            <a href="#" class="sidebar-link">
-                <span class="sidebar-link-icon">🎵</span>
-                Your Library
-            </a>
         </div>
 
-        <!-- Bottom section of the sidebar -->
-        <div class="sidebar-section">
-            <a href="#" class="sidebar-link active">
-                <span class="sidebar-link-icon">💜</span>
-                <span class="sidebar-link-text">Liked Songs</span>
-            </a>
-            <!-- Repeat for each item -->
-            <a href="#" class="sidebar-link">
-                <span class="sidebar-link-icon">🎶</span>
-                <span class="sidebar-link-text">African Lofi Experience</span>
-            </a>
-            <a href="#" class="sidebar-link">
-                <span class="sidebar-link-icon">👤</span>
-                <span class="sidebar-link-text">Ayra Starr</span>
-            </a>
-            <!-- ... more links ... -->
-        </div>
     </div>
 
     <div style="margin-left:240px; padding:20px;">
         <header class="header-container">
-            <div class="search-bar" style="width: 390px;">
-                <input type="search" placeholder="What do you want to listen to?" aria-label="Search">
-                <button type="submit" aria-label="Search">
-                    🔍
-                </button>
-            </div>
+            <form action="search" method="POST">
+                {% csrf_token %}
+
+                <div class="search-bar" style="width: 390px;">
+                    <input type="search" name="search_query" placeholder="What do you want to listen to?" aria-label="Search">
+                    <button type="submit" aria-label="Search">
+                        🔍
+                    </button>
+                </div>
+            </form>
             <div class="search-title">Top Artists</div>
         </header>
 
