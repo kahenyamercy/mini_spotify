@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 from dotenv import load_dotenv
 
@@ -87,7 +88,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+DATABASES['default'] = dj_database_url.parse("postgresql://magicmusic_user:iwHo9nagWQyK5sv8qYzmaI53pRuYkDMt@dpg-cpsivf08fa8c73982610-a.oregon-postgres.render.com/magicmusic")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
