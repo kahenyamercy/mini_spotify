@@ -89,6 +89,7 @@ DATABASES = {
     }
 }
 
+DATABASES["default"] = dj_database_url.parse("postgresql://magicmusic_2syp_user:OQM8YU1g68ZyAavMKwp7auK4iW7IUqZI@dpg-cqg8holds78s73cacka0-a.oregon-postgres.render.com/magicmusic_2syp")
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
